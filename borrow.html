@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinjam Alat</title>
+    <link rel="stylesheet" href="styleborrow.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Pinjam Alat Perkemahan</h1>
+        <form id="borrowForm" onsubmit="addItem(
+            document.getElementById('name').value,
+            document.getElementById('item').value,
+            document.getElementById('quantity').value,
+            document.getElementById('returnDate').value
+        ); alert('Peminjaman berhasil!'); this.reset(); return false;">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" required>
+
+            <label for="item">Alat yang Dipinjam:</label>
+            <select id="item" required>
+                <option value="" disabled selected>Pilih Alat</option>
+                <option value="Tenda">Tenda</option>
+                <option value="Kompor Portable">Kompor Portable</option>
+                <option value="Lampu Lentera">Lampu Lentera</option>
+                <option value="Sleeping Bag">Sleeping Bag</option>
+                <option value="Matras">Matras</option>
+                <option value="Tas Gunung">Tas Gunung</option>
+                <option value="Cooking Set">Cooking Set</option>
+                <option value="Panci dan Wajan">Panci dan Wajan</option>
+                <option value="Jaket Waterproof">Jaket Waterproof</option>
+                <option value="Botol Air">Botol Air</option>
+            </select>
+
+            <label for="quantity">Jumlah yang Dipinjam:</label>
+            <select id="quantity" required>
+                <option value="" disabled selected>Pilih Jumlah</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label for="returnDate">Tanggal Pengembalian:</label>
+            <input type="date" id="returnDate" required>
+
+            <button type="submit">Pinjam</button>
+        </form>
+
+        <a href="index.html">Kembali ke Menu Utama</a>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

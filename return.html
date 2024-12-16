@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kembalikan Alat</title>
+    <link rel="stylesheet" href="stylereturn.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Kembalikan Alat</h1>
+        <form id="returnForm">
+            <label for="borrower">Pilih Nama Peminjam:</label>
+            <select id="borrower" required>
+                <option value="" disabled selected>Pilih nama peminjam</option>
+            </select>
+
+            <label for="damaged">Apakah Barang Rusak?</label>
+            <select id="damaged" required>
+                <option value="no" selected>Tidak</option>
+                <option value="yes">Ya</option>
+            </select>
+
+            <button type="submit">Kembalikan</button>
+        </form>
+
+        <a href="index.html">Kembali ke Menu Utama</a>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        populateBorrowersList();
+    </script>
+</body>
+</html>

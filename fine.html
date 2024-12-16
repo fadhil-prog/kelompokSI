@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Denda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Informasi Denda</h1>
+        <table id="fineTable" border="1" style="width: 100%; text-align: left; color: white;">
+            <thead>
+                <tr>
+                    <th>Nama Peminjam</th>
+                    <th>Barang</th>
+                    <th>Jumlah</th>
+                    <th>Denda Keterlambatan</th>
+                    <th>Denda Kerusakan</th>
+                    <th>Total Denda</th>
+                    <th>Tanggal Pengembalian</th>
+                </tr>
+            </thead>
+            <tbody id="fineInfo">
+            </tbody>
+        </table>
+        <a href="index.html">Kembali ke Menu Utama</a>
+    </div>
+
+    <script>
+        const fineInfo = JSON.parse(localStorage.getItem('fineInfo'));
+
+        if (fineInfo) {
+            const fineTable = document.getElementById('fineInfo');
+            const row = `
+                <tr>
+                    <td>${fineInfo.name}</td>
+                    <td>${fineInfo.item}</td>
+                    <td>${fineInfo.quantity}</td>
+                    <td>Rp${fineInfo.lateFine.toLocaleString()}</td>
+                    <td>Rp${fineInfo.damageFine.toLocaleString()}</td>
+                    <td>Rp${fineInfo.totalFine.toLocaleString()}</td>
+                    <td>${fineInfo.returnDate}</td>
+                </tr>
+            `;
+            fineTable.innerHTML = row;
+        }
+    </script>
+
+</body>
+</html>
